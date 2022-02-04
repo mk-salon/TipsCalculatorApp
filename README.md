@@ -1,9 +1,10 @@
-# TipsCalculatorApp
+## TipsCalculatorApp
 
-## With this App you can easily split the bill.
+### With this App you can easily split the bill.
+---
+https://user-images.githubusercontent.com/29888750/152544061-01ddf673-dadc-417c-8f36-eb61773f530e.mp4
 
-
-
+---
 ```swift
 import UIKit
 
@@ -23,7 +24,6 @@ class CalculatorViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func tipChanged(_ sender: UIButton) {
@@ -51,10 +51,8 @@ class CalculatorViewController: UIViewController {
             billTotal = Double(bill)!
             let result = billTotal * (1 + tip) / Double(numberOfPeople)
             finalResult = String(format: "%.2f", result)
-            
         }
-            self.performSegue(withIdentifier: "goToResult", sender: self)
-        
+            self.performSegue(withIdentifier: "goToResult", sender: self)    
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -63,7 +61,6 @@ class CalculatorViewController: UIViewController {
             destinationVC.result = finalResult
             destinationVC.tip = Int(tip * 100)
             destinationVC.split = numberOfPeople
-
         }
     }
 }
